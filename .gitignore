@@ -14,6 +14,7 @@ glitre/*
 # Ignore JS libraries
 jqtouch/
 iui/
+jquerym*
 
 # Ignore anything that starts with an underscore
 _*
@@ -25,3 +26,6 @@ feeds/feedcache/*
 # The file from Bolhylla
 public.txt
 bokhylla.inc
+
+# Databasedump
+*.sql
