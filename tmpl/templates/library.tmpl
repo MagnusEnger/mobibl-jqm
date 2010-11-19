@@ -1,6 +1,7 @@
-<div id="{$config.lib.lib}" title="{$config.lib.name_short}" class="panel">
-<h2>{$config.lib.name}</h2>
-<ul>
+<div id="{$config.lib.lib}" data-role="page">
+  <div data-role="header" data-theme="b"><h1>{$config.lib.name}<h1></div>
+  <div data-role="content" data-theme="g">
+    <ul data-role="listview">
 	<li><a href="#{$config.lib.lib}_search">Søk i katalogen</a></li>
 	{foreach from=$config.lib.nav key=id item=nav}
 	<li><a href="?={$config.lib.lib}_{$id}">{$nav.title}</a></li>
@@ -10,19 +11,23 @@
 	{if $config.debug}
 	<li><a href="?test=debug">Debug</a></li>
 	{/if}
-</ul>
-{$config.lib.frontpage}
+    </ul>
+  </div>
+{* $config.lib.frontpage *}
 </div>
 
-<div id="{$config.lib.lib}_search" title="Søk" class="panel">
-<form action="/glitre/api/" method="GET">
+<div id="{$config.lib.lib}_search" data-role="page">
+  <div data-role="header" data-theme="b"><h1>Søk i katalogen<h1></div>
+  <div data-role="content" data-theme="g">
+    <form action="/glitre/api/" method="GET">
     <fieldset>
         <label>Navn, emne, ord i tittel:</label>
         <input id="artist" type="text" name="q"/>
         <input type="hidden" name="library" value="{$config.lib.lib}" />
         <input type="hidden" name="format" value="mobibl" />
     </fieldset>
-</form>
+    </form>
+  </div>
 </div>
 
 {*
